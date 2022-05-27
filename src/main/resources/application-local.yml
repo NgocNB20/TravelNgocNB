@@ -1,0 +1,53 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/mytravel?useUnicode=yes&characterEncoding=UTF-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 12345678
+  servlet:
+    multipart:
+      max-file-size: 15MB
+      max-request-size: 15MB
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: 8080
+
+app:
+  auth:
+    secret-key: &$HFG@264kdh534UYR
+    expired-token-time: 3600
+    expired-remember-token-time: 86400
+
+  file:
+    location: ${app.url.file}/KLTN/src/main/resources/static/image/image
+    location-blog: ${app.url.file}/KLTN/src/main/resources/static/image/blogs
+    location-hotel: ${app.url.file}/KLTN/src/main/resources/static/image/hotels
+    location-place: ${app.url.file}/KLTN/src/main/resources/static/image/places
+    location-restaurant: ${app.url.file}/KLTN/src/main/resources/static/image/restaurants
+    location-tour: ${app.url.file}/KLTN/src/main/resources/static/image/tours
+    location-agency: ${app.url.file}/KLTN/src/main/resources/static/image/agencies
+    location-post: ${app.url.file}/KLTN/src/main/resources/static/image/posts
+    avatar: ${app.file.location}/avatar
+    url-prefix: ${app.api.host}/file
+
+  page:
+    size: 3
+
+  mail:
+    sender-name: Nguyen Ba Ngoc
+    sender-email: ngocmeu2000@gmail.com
+    password: ngoc19112000
+  url:
+    file: home/bangoc
+
+  api:
+    host: http://localhost:${server.port}
+
+
+
+
